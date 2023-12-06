@@ -1,9 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import HomeAPI from "./api/home";
 
 function App() {
+  async function postHome(params) {
+    const result = await HomeAPI.postHome(params);
+    console.log(result);
+  }
+
   return (
     <div className="App">
+      <button onClick={(e) => postHome({ name: "ffsd" })}>callHome</button>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
